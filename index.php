@@ -23,7 +23,7 @@ class Movie{
 
 }
 
-$list_movie=[
+$list_movie =[
     $spiderman = New Movie('Spiderman','fantasy',2010,6,2.25),
     $superman = New Movie('Superman','fantasy',2008,6,1.50),
     $batman = New Movie('Batman','fantasy',2012,6,2.30),
@@ -33,4 +33,35 @@ $list_movie=[
 ];
 
 
-var_dump($list_movie);
+
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header><h1>La mia lista di film</h1></header>
+    <main>
+        <ul>
+            <?php foreach($list_movie as $film ){?>
+                <li>
+                    <?php echo $film->name;?>
+                    <ul>
+                        <li>Genere:<?php echo $film->type;?></li>
+                        <li>Prima Uscita:<?php echo $film->relase_date;?></li>
+                        <li>Valutazione:<?php echo $film->valutation;?></li>
+                        <li>Durata Film:<?php echo $film->duration;?></li>
+                    </ul>
+                </li>
+                
+                <?php }?>
+        </ul>
+    </main>
+    <footer></footer>
+    
+</body>
+</html>
