@@ -46,6 +46,12 @@ class Movie{
 
     }
     public function setRelaseDate($relase_date) : void {
+        if($relase_date<1900 || $relase_date>2050){
+            throw new Exception('la data deve essere compersa tra 1900 e 2050');
+        }
+        if(is_float($relase_date) === true){
+            throw new Exception('la data deve essere  un numero intero');
+        }
          $this->relase_date = $relase_date ;
 
     }
@@ -64,7 +70,7 @@ class Movie{
 $list_movie =[
     $spiderman = New Movie('Spiderman','fantasy',2010,6,2.25),
     $superman = New Movie('Superman','fantasy',2008,6,1.50),
-    $batman = New Movie('Batman','fantasy',2012,6,2.30),
+    $batman = New Movie('Batman','fantasy',2012.9,6,2.30),
     $flash = New Movie('Flash','fantasy',2017,6,1.25),
     $thor = New Movie('Thor','fantasy',2011,6,0.40),
     $supergirl = New Movie('Supergirl','fantasy',2020,6,2.00),
