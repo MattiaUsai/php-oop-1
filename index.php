@@ -1,24 +1,62 @@
 <?php
 class Movie{
 
-    public string $name;
-    public string $type;
-    public int $relase_date;
-    public int $valutation;
-    public int $duration;
+    private string $name;
+    private string $type;
+    private int $relase_date;
+    private int $valutation;
+    private int $duration;
     
 
 
     public function __construct($name,$type, $relase_date,$valutation,$duration)
     {
-        
         $this->name = $name;
         $this->type = $type;
         $this->relase_date = $relase_date;
         $this->valutation = $valutation;
         $this->duration = $duration;
     }
- 
+    public function getName() : string {
+        return $this->name;
+
+    }
+    public function getType() : string {
+        return $this->type;
+
+    }
+    public function getRelaseDate() : int {
+        return $this->relase_date;
+
+    }
+    public function getValutation() : int {
+        return $this->valutation;
+
+    }
+    public function getDuration() : int {
+        return $this->duration;
+
+    }
+    public function setName(string $name) : void {
+         $this->name = $name ;
+
+    }
+    public function setType(string $type) : void {
+         $this->type = $type ;
+
+    }
+    public function setRelaseDate($relase_date) : void {
+         $this->relase_date = $relase_date ;
+
+    }
+    public function setValutation( $valutation) : void {
+         $this->valutation = $valutation ;
+
+    }
+    public function setDuration($duration) : void {
+         $this->duration = $duration ;
+
+    }
    
 
 }
@@ -49,12 +87,12 @@ $list_movie =[
         <ul>
             <?php foreach($list_movie as $film ){?>
                 <li>
-                    <?php echo $film->name;?>
+                    <?php echo $film->getName();?>
                     <ul>
-                        <li>Genere:<?php echo $film->type;?></li>
-                        <li>Prima Uscita:<?php echo $film->relase_date;?></li>
-                        <li>Valutazione:<?php echo $film->valutation;?></li>
-                        <li>Durata Film:<?php echo $film->duration;?></li>
+                        <li>Genere:<?php echo $film->getName();?></li>
+                        <li>Prima Uscita:<?php echo $film->getRelaseDate();?></li>
+                        <li>Valutazione:<?php echo $film->getValutation();?></li>
+                        <li>Durata Film:<?php echo $film->getDuration();?></li>
                     </ul>
                 </li>
                 
